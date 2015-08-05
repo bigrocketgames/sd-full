@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: cdc41c6a8855cd04d8d57ed2e68829ff
+timeCreated: 1434240028
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - enemyBlueEasy: {fileID: 190920, guid: ed655a3fa2cd2734e81cf354cbb2daf7, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

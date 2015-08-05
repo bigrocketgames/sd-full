@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 69234bdf377c6ef4eaa498780f36cf7d
+timeCreated: 1438547919
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - blueEnemyLaser: {fileID: 152210, guid: f6a082d93ce61674f982e453573000ab, type: 2}
+  - greenEnemyLaser: {fileID: 167906, guid: c85e3489d5d04fd4881b6b530d811546, type: 2}
+  - redEnemyLaser: {fileID: 173760, guid: 3c8354b9babc86c4d8f5c954cb2091da, type: 2}
+  - shipExplosion: {fileID: 111288, guid: 29af2bfd75296bb43b2e2d84d8496f84, type: 2}
+  - shipExplodeAnim: {fileID: 9513426, guid: 29af2bfd75296bb43b2e2d84d8496f84, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
