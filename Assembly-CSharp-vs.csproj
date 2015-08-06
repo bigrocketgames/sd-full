@@ -55,6 +55,7 @@
      <Compile Include="Assets\Level Menu 2D\Scripts\Demo Scripts\TRClicker.cs" />
      <Compile Include="Assets\Level Menu 2D\Scripts\Demo Scripts\VerticalDemoClicker.cs" />
      <Compile Include="Assets\Level Menu 2D\SingletonPerfect\Singleton.cs" />
+     <Compile Include="Assets\MoveGameModeChoices.cs" />
      <Compile Include="Assets\Scripts\BackToMenuScript.cs" />
      <Compile Include="Assets\Scripts\ButtonChoice.cs" />
      <Compile Include="Assets\Scripts\ClickTouchScript.cs" />

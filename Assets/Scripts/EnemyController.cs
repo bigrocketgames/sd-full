@@ -56,7 +56,7 @@ public class EnemyController : MonoBehaviour {
 		
 		repeatFireRate = 3.0f - (0.01f * wave);
 		laserSpeed = 3.0f + (0.03f * wave);
-		InvokeRepeating("NextDestination",0f,1.5f);
+		InvokeRepeating("NextDestination",0f,1.0f);
 		InvokeRepeating("EnemyFire",0f,repeatFireRate);
 		
 		scoreManager = GameObject.FindObjectOfType<ScoreManager>();
@@ -73,7 +73,7 @@ public class EnemyController : MonoBehaviour {
 			if((diffx > -0.2 && diffx < 0.2) && (diffy > -0.2 && diffy < 0.2))
 			{
 				CancelInvoke();
-				InvokeRepeating("NextDestination",0f,1.5f);
+				InvokeRepeating("NextDestination",0f,1.0f);
 				InvokeRepeating("EnemyFire",0f,repeatFireRate);
 			}
 			
