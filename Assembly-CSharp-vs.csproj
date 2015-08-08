@@ -55,7 +55,6 @@
      <Compile Include="Assets\Level Menu 2D\Scripts\Demo Scripts\TRClicker.cs" />
      <Compile Include="Assets\Level Menu 2D\Scripts\Demo Scripts\VerticalDemoClicker.cs" />
      <Compile Include="Assets\Level Menu 2D\SingletonPerfect\Singleton.cs" />
-     <Compile Include="Assets\MoveGameModeChoices.cs" />
      <Compile Include="Assets\Scripts\BackToMenuScript.cs" />
      <Compile Include="Assets\Scripts\ButtonChoice.cs" />
      <Compile Include="Assets\Scripts\ClickTouchScript.cs" />
@@ -72,6 +71,8 @@
      <Compile Include="Assets\Scripts\MeteorController.cs" />
      <Compile Include="Assets\Scripts\MeteorDustScript.cs" />
      <Compile Include="Assets\Scripts\MeteorSpawner.cs" />
+     <Compile Include="Assets\Scripts\MoveGameModeChoicesLeft.cs" />
+     <Compile Include="Assets\Scripts\MoveGameModeChoicesRight.cs" />
      <Compile Include="Assets\Scripts\MusicManager.cs" />
      <Compile Include="Assets\Scripts\OptionsMenu.cs" />
      <Compile Include="Assets\Scripts\PauseGameButton.cs" />
