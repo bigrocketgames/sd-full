@@ -21,7 +21,15 @@ public class BackToMenuScript : MonoBehaviour {
 	{
 		//AutoInitScript.I.indexToLoad = Application.loadedLevel-1;
 		sfxManager.PlayButtonPress();
-		levelManager.LoadLevel("Main Menu");
+		
+		if(Application.loadedLevel == 4)
+		{	
+			levelManager.LoadLevel("Main Menu");
+		}
+		else
+		{
+			Application.LoadLevel (Application.loadedLevel-1);
+		}
 	}
 
 }

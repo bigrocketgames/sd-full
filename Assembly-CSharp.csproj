@@ -71,6 +71,7 @@
      <Compile Include="Assets\Scripts\MeteorController.cs" />
      <Compile Include="Assets\Scripts\MeteorDustScript.cs" />
      <Compile Include="Assets\Scripts\MeteorSpawner.cs" />
+     <Compile Include="Assets\Scripts\ModeMenu.cs" />
      <Compile Include="Assets\Scripts\MoveGameModeChoicesLeft.cs" />
      <Compile Include="Assets\Scripts\MoveGameModeChoicesRight.cs" />
      <Compile Include="Assets\Scripts\MusicManager.cs" />

@@ -519,7 +519,7 @@ public class LevelMenu2D : Singleton<LevelMenu2D> {
 		//TODO - Added by me to set the ship choice and move to difficulty choice scene
 		sfxManager.PlayButtonPress();
 		PlayerPrefsManager.SetPlayerShip(itemObject.name);
-		levelManager.LoadLevel("DiffChoice");
+		levelManager.LoadLevel("ModeChoice");
 	}
 
 	void moveComplete()

@@ -9,7 +9,7 @@ public class PlayerPrefsManager : MonoBehaviour {
 	const string LEVEL_KEY = "level_unlocked_";
 	const string HIGHSCORE_KEY = "highscore";
 	const string CURRENT_SCORE_KEY = "current_score";
-	const string PLAYER_SHIP = "ship_choice";
+	const string PLAYER_SHIP_KEY = "ship_choice";
 	const string MODE_CHOICE_KEY = "mode_choice";
 	const string RESULT_KEY = "result";
 	
@@ -119,12 +119,12 @@ public class PlayerPrefsManager : MonoBehaviour {
 	
 	public static void SetPlayerShip(string shipName)
 	{
-		PlayerPrefs.SetString(PLAYER_SHIP, shipName);
+		PlayerPrefs.SetString(PLAYER_SHIP_KEY, shipName);
 	}
 	
 	public static string GetPlayerShip()
 	{
-		return PlayerPrefs.GetString(PLAYER_SHIP);
+		return PlayerPrefs.GetString(PLAYER_SHIP_KEY);
 	}
 	
 	public static void SetGameMode(string modeChoice)
