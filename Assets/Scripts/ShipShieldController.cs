@@ -29,7 +29,7 @@ public class ShipShieldController : MonoBehaviour {
 	
 	void ChangeColor()
 	{
-		Color m_color = new Color(Random.Range(0f,1f),Random.Range(0f,1f),Random.Range(0f,1f),0.5f);
+		Color m_color = new Color(Random.Range(0.5f,1f),Random.Range(0.5f,1f),Random.Range(0.5f,1f),0.6f);
 		foreach(var r in GetComponents<Renderer>())
 		{
 			r.material.color = m_color;

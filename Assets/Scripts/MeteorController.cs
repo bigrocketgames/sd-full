@@ -43,7 +43,7 @@ public class MeteorController : MonoBehaviour {
 					return;
 				}
 			}
-			else if(coll.gameObject.tag == "Player")
+			else if(coll.gameObject.tag == "Player" || coll.gameObject.tag == "StarbaseShield")
 			{
 				KillMeteorNoPoints();
 			}

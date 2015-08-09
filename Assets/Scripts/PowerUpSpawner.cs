@@ -24,9 +24,9 @@ public class PowerUpSpawner : MonoBehaviour {
 	
 	public void ShipPowerUp(Vector3 enemyPos)
 	{
-		int dropPowerUp = Random.Range(1,50);
+		int dropPowerUp = Random.Range(1,51);
 		
-		if(dropPowerUp == 3 || dropPowerUp == 50 || dropPowerUp == 25)
+		if(dropPowerUp == 3 || dropPowerUp == 25)
 		{
 			GameObject laserUp = Instantiate(shipLaserUp,enemyPos,Quaternion.identity)as GameObject;
 		}
@@ -34,11 +34,11 @@ public class PowerUpSpawner : MonoBehaviour {
 		{
 			GameObject shipHealthIncrease = Instantiate(shipHealthUp,enemyPos,Quaternion.identity)as GameObject;
 		}
-		else if(dropPowerUp == 20)
+		else if(dropPowerUp == 23)
 		{
 			GameObject shipShields = Instantiate(shipShieldUp,enemyPos,Quaternion.identity)as GameObject;
 		}
-		else if(dropPowerUp == 33)
+		else if(dropPowerUp == 37)
 		{
 			GameObject extraLife = Instantiate(ship1Up,enemyPos, Quaternion.identity) as GameObject;
 			extraLife.AddComponent<PolygonCollider2D>();
@@ -47,7 +47,7 @@ public class PowerUpSpawner : MonoBehaviour {
 	
 	public void StarbasePowerUp(Vector3 meteorPos)
 	{
-		int dropPowerUp = Random.Range(1, 20);
+		int dropPowerUp = Random.Range(1, 21);
 		
 		if(dropPowerUp == 3)
 		{

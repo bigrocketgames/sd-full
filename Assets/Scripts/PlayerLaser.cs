@@ -27,12 +27,12 @@ public class PlayerLaser : MonoBehaviour {
 		if(coll.gameObject.tag == "Easy" || coll.gameObject.tag == "Medium" || coll.gameObject.tag == "Hard")
 		{
 			enemyController = coll.gameObject.GetComponent<EnemyController>();
-			enemyController.DoDamage(laserDamage);
 			bool isDead = enemyController.IsDead();
 			
 			if (!isDead)
 			{
 				Destroy(gameObject);
+				enemyController.DoDamage(laserDamage);
 			}
 			else
 			{

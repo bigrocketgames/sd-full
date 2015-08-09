@@ -54,9 +54,8 @@ public class StarbaseShieldController : MonoBehaviour {
 				Deactivate();
 			}
 		}
-		else if(coll.gameObject.tag == "Meteor")
+		else if(coll.gameObject.tag == "BrownMeteor" || coll.gameObject.tag == "GreyMeteor")
 		{
-			Destroy(coll.gameObject);
 			shieldHealth -= 2;
 			
 			if(shieldHealth <= 0)
@@ -68,7 +67,7 @@ public class StarbaseShieldController : MonoBehaviour {
 	
 	void ChangeColor()
 	{
-		Color m_color = new Color(Random.Range(0f,1f),Random.Range(0f,1f),Random.Range(0f,1f),0.4f);
+		Color m_color = new Color(Random.Range(0.5f,1f),Random.Range(0.5f,1f),Random.Range(0.5f,1f),0.5f);
 		foreach(var r in GetComponents<Renderer>())
 		{
 			r.material.color = m_color;
