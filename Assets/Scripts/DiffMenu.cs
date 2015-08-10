@@ -14,13 +14,17 @@ public class DiffMenu : MonoBehaviour {
 	
 	public void DifficultySelect (string Button)
 	{
-		if (Button == "Normal")
+		if (Button == "Easy")
 		{
 			PlayerPrefsManager.SetDifficulty(1);
 		}
-		else
+		else if (Button == "Normal")
 		{
 			PlayerPrefsManager.SetDifficulty(2);
+		}
+		else if (Button == "Hard")
+		{
+			PlayerPrefsManager.SetDifficulty(3);
 		}
 		
 		playSFX();

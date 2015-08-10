@@ -92,6 +92,32 @@ public class GameScene : MonoBehaviour {
 	{
 		if(difficulty == 1)
 		{
+			if(wave < 10)
+			{
+				wave ++;
+				enemySpawner.EnemyNumber(wave);
+			}
+			else if (wave >= 10)
+			{
+				scoreManager.SetCurrentScore();
+				Invoke("YouWin", 1.0f);
+			}
+		}
+		else if(difficulty == 2)
+		{
+			if(wave < 30)
+			{
+				wave ++;
+				enemySpawner.EnemyNumber(wave);
+			}
+			else if (wave >= 30)
+			{
+				scoreManager.SetCurrentScore();
+				Invoke("YouWin", 1.0f);
+			}
+		}
+		else if (difficulty == 3)
+		{
 			if(wave < 50)
 			{
 				wave ++;
@@ -100,36 +126,28 @@ public class GameScene : MonoBehaviour {
 			else if (wave >= 50)
 			{
 				scoreManager.SetCurrentScore();
-				GoToResults("You WIN!");
-			}
-		}
-		else if(difficulty == 2)
-		{
-			if(wave < 100)
-			{
-				wave ++;
-				enemySpawner.EnemyNumber(wave);
-			}
-			else if (wave >= 100)
-			{
-				scoreManager.SetCurrentScore();
-				GoToResults("You WIN!");
+				Invoke("YouWin", 1.0f);
 			}
 		}
 		
-		if( (wave-1) % 5 == 0)
+		if( (wave) % 5 == 0)
 			{
 				AnalyticTest();
 			}
 		
-		if(wave == 10 || wave == 25 || wave == 50 || wave == 75 || wave == 100)
+		if(wave == 10 || wave == 20 || wave == 30 || wave == 40 || wave == 50)
 		{
 			musicManager.PlayGameMusic(bossMusic, true);
 		}
-		else if(wave == 11 || wave == 26 || wave == 51 || wave == 76 || wave == 101)
+		else if(wave == 11 || wave == 21 || wave == 31 || wave == 41 || wave == 51)
 		{
 			NextSong();
 		}
+	}
+	
+	void YouWin()
+	{
+		GoToResults("You WIN!");
 	}
 	
 	public void OnPause()

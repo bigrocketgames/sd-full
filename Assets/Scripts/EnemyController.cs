@@ -19,7 +19,7 @@ public class EnemyController : MonoBehaviour {
 	private float xmin;
 	private float xmax;
 	private float ymin = -2.25f;
-	private float ymax = 8;
+	//private float ymax = 8;
 	private float randomX;
 	private float randomY;
 	private float speed = 1f;
@@ -64,37 +64,13 @@ public class EnemyController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		Vector3 shipPos = transform.position;
-		float diffx = randomX - shipPos.x;
-		float diffy = randomY - shipPos.y;
-		
+
 		if(!isDead)
 		{
-			if((diffx > -0.2 && diffx < 0.2) && (diffy > -0.2 && diffy < 0.2))
-			{
-				CancelInvoke();
-				InvokeRepeating("NextDestination",0f,1.0f);
-				InvokeRepeating("EnemyFire",0f,repeatFireRate);
-			}
-			
-			if(diffx > 0.2)
-			{
-				transform.position = new Vector3(Mathf.Clamp(transform.position.x + speed * Time.deltaTime, xmin, xmax), transform.position.y, transform.position.z);
-			}
-			else if(diffx < -0.2)
-			{
-				transform.position = new Vector3(Mathf.Clamp(transform.position.x - speed * Time.deltaTime, xmin, xmax), transform.position.y, transform.position.z);
-			}
-			
-			if(diffy > 0.2)
-			{
-				transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y + speed * Time.deltaTime, ymin, ymax), transform.position.z);
-			}
-			else if(diffy < -0.2)
-			{
-				transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y - speed * Time.deltaTime, ymin, ymax), transform.position.z);
-			}
+			transform.position = new Vector3(Mathf.MoveTowards(transform.position.x,randomX,Time.deltaTime*speed),Mathf.MoveTowards(transform.position.y,randomY,Time.deltaTime*speed),transform.position.z);
+		}
 		else
+		{
 			return;
 		}
 	}
@@ -150,27 +126,6 @@ public class EnemyController : MonoBehaviour {
 		randomX = Random.Range(xmin, xmax);
 		randomY = Random.Range(ymin, camera.ViewportToWorldPoint(new Vector3(1,1,distance)).y - padding);
 	}
-	
-//	void OnTriggerEnter2D (Collider2D coll)
-//	{		
-//		if(this.transform.position.y <= 5f)
-//		{	
-//			if(coll.gameObject.tag == "Player")
-//			{
-//				if(!isDead)
-//				{
-//					KillEnemy();
-//				}
-//			}
-//			else if(coll.gameObject.tag == "Meteor")
-//			{
-//				if(!isDead)
-//				{
-//					KillEnemyNoBonus();
-//				}
-//			}
-//		}
-//	}
 	
 	public void KillEnemy()
 	{

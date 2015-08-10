@@ -4,6 +4,7 @@ using System.Collections;
 public class EnemySpawner : MonoBehaviour {
 	
 	public GameObject[] enemies;
+	public GameObject[] bosses;
 	
 	private int enemyStartCount;
 	private int enemiesThisWaveCount;
@@ -25,11 +26,25 @@ public class EnemySpawner : MonoBehaviour {
 	
 	public void EnemyNumber(int wave)
 	{	
-		enemyBuildCount = 0;
-		enemyStartCount = (int)Mathf.Log(wave,2f)*4 + ((int)Mathf.Sqrt(wave) * 5);
-		enemiesThisWaveCount = enemyStartCount;
-		InvokeRepeating("EnemyCreation",0f,1.0f);
-		scoreManager.SetEnemyWaveText(enemiesThisWaveCount);
+		if (wave % 10 == 0)
+		{
+			BossCreation(wave);
+			scoreManager.SetEnemyWaveText(1);
+		}
+		else
+		{
+			enemyBuildCount = 0;
+			enemyStartCount = (int)Mathf.Log(wave,2f)*2 + ((int)Mathf.Sqrt(wave) * 5);
+			enemiesThisWaveCount = enemyStartCount;
+			InvokeRepeating("EnemyCreation",0f,1.0f);
+			scoreManager.SetEnemyWaveText(enemiesThisWaveCount);
+		}
+			
+	}
+	
+	void BossCreation(int wave)
+	{
+		GameObject enemy = Instantiate(bosses[(wave/10)-1],new Vector3(0,7.5f,-2),Quaternion.identity) as GameObject;
 	}
 	
 	public void EnemyCreation()

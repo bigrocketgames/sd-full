@@ -4,6 +4,7 @@ using System.Collections;
 public class PlayerLaser : MonoBehaviour {
 	
 	private EnemyController enemyController;
+	private BossController bossController;
 	private int laserDamage;
 	private int difficulty;
 	private int wave;
@@ -39,9 +40,24 @@ public class PlayerLaser : MonoBehaviour {
 				return;
 			}
 		}
+		else if (coll.gameObject.tag == "Boss1" || coll.gameObject.tag == "Boss2" || coll.gameObject.tag == "Boss3" || coll.gameObject.tag == "Boss4" || coll.gameObject.tag == "Boss5")
+		{
+			bossController = coll.gameObject.GetComponent<BossController>();
+			bool isDead = bossController.IsDead();
+			
+			if(!isDead)
+			{
+				Destroy(gameObject);
+				bossController.DoDamage(laserDamage/2);
+			}
+			else
+			{
+				return;
+			}
+		}
 	}
 	
-	//TODO - create method to figure out damage to inflict on the enemies with my lasers
+	//Determines damage to inflict on the enemies with my lasers
 	public void FigureDamage(int diff, int wave)
 	{
 		laserDamage = (5 * difficulty) + wave;

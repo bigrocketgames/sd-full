@@ -4,7 +4,6 @@ using UnityEngine.UI;
 
 public class ShipShieldController : MonoBehaviour {
 	
-	private Renderer r;
 	private PlayerController playerController;
 	private int shieldHealth;
 	
@@ -22,7 +21,6 @@ public class ShipShieldController : MonoBehaviour {
 	{
 		shieldHealth = 5;
 		playerController = GameObject.FindObjectOfType<PlayerController>();
-		r = GetComponent<Renderer>();
 		InvokeRepeating("ChangeColor",0f,0.1f);
 		Invoke("Deactivate", 7.0f);
 	}

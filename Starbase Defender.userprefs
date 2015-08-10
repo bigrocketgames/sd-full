@@ -1,25 +1,24 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PowerUpSpawner.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\bossBeginExplode.cs">
     <Files>
-      <File FileName="Assets\Scripts\EnemyController.cs" Line="25" Column="27" />
-      <File FileName="Assets\Scripts\LevelMenu2D.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\BackToMenuScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\ModeMenu.cs" Line="19" Column="40" />
-      <File FileName="Assets\Scripts\PlayerPrefsManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\PlayerLaser.cs" Line="39" Column="12" />
-      <File FileName="Assets\Scripts\ShipShieldController.cs" Line="33" Column="46" />
-      <File FileName="Assets\Scripts\StarbaseShieldController.cs" Line="58" Column="4" />
-      <File FileName="Assets\Scripts\PowerUpSpawner.cs" Line="38" Column="4" />
-      <File FileName="Assets\Scripts\MeteorController.cs" Line="46" Column="86" />
+      <File FileName="Assets\Scripts\EnemySpawner.cs" Line="38" Column="43" />
+      <File FileName="Assets\Scripts\EnemyController.cs" Line="68" Column="3" />
+      <File FileName="Assets\Scripts\ShipShieldController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\StarbaseShieldController.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\EnemyLaser.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\BossController.cs" Line="149" Column="29" />
+      <File FileName="Assets\Scripts\bossBeginExplode.cs" Line="34" Column="11" />
+      <File FileName="Assets\Scripts\PlayerLaser.cs" Line="60" Column="14" />
+      <File FileName="Assets\Scripts\GameScene.cs" Line="149" Column="3" />
+      <File FileName="Assets\Scripts\DiffMenu.cs" Line="20" Column="4" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="Assembly-CSharp" expanded="True">
             <Node name="Scripts" expanded="True">
-              <Node name="PowerUpSpawner.cs" selected="True" />
+              <Node name="bossBeginExplode.cs" selected="True" />
             </Node>
           </Node>
         </State>
