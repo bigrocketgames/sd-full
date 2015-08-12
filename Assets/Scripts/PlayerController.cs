@@ -308,7 +308,7 @@ public class PlayerController : MonoBehaviour {
 				return;
 			}
 		}
-		else if (coll.gameObject.tag == "BrownMeteor"  || coll.gameObject.tag == "GreyMeteor")
+		else if (coll.gameObject.tag == "BrownMeteor"  || coll.gameObject.tag == "GreyMeteor" || coll.gameObject.tag == "boss1" || coll.gameObject.tag == "boss2" || coll.gameObject.tag == "boss3" || coll.gameObject.tag == "boss4" || coll.gameObject.tag == "boss5")
 		{
 			KillPlayer();
 		}
@@ -386,12 +386,6 @@ public class PlayerController : MonoBehaviour {
 		this.gameObject.SetActive(true);
 		setPlayerLaser("1laser");
 		InvokeRepeating("FireLaser", 0.5f, weaponRepeatRate);
-	}
-	
-	public void Player1Up()
-	{
-		lives++;
-		scoreManager.SetLivesLeftText(lives);
 	}
 	
 	void SetHealthBar()

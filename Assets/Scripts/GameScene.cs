@@ -16,6 +16,7 @@ public class GameScene : MonoBehaviour {
 	private AudioClip currentMusic;
 	private int musicChoiceArrayNumber;
 	private float startTime;
+	private string gameMode;
 	
 	public AudioClip[] gameMusicArray;
 	public AudioClip bossMusic;
@@ -32,6 +33,7 @@ public class GameScene : MonoBehaviour {
 		musicSlider.SetActive(false);
 		sfxSlider.SetActive(false);
 		difficulty = PlayerPrefsManager.GetDifficulty();
+		gameMode = PlayerPrefsManager.GetGameMode();
 		scoreManager = GameObject.FindObjectOfType<ScoreManager>();
 		playerController = GameObject.FindObjectOfType<PlayerController>();
 		enemySpawner = GameObject.FindObjectOfType<EnemySpawner>();
@@ -90,40 +92,61 @@ public class GameScene : MonoBehaviour {
 	
 	public void NextWave()
 	{
-		if(difficulty == 1)
+		if (gameMode == "Wave")
 		{
-			if(wave < 10)
+			if(difficulty == 1)
 			{
-				wave ++;
-				enemySpawner.EnemyNumber(wave);
+				if(wave < 10)
+				{
+					wave ++;
+					enemySpawner.EnemyNumber(wave);
+				}
+				else if (wave >= 10)
+				{
+					scoreManager.SetCurrentScore();
+					Invoke("YouWin", 1.0f);
+				}
 			}
-			else if (wave >= 10)
+			else if(difficulty == 2)
 			{
-				scoreManager.SetCurrentScore();
-				Invoke("YouWin", 1.0f);
+				if(wave < 30)
+				{
+					wave ++;
+					enemySpawner.EnemyNumber(wave);
+				}
+				else if (wave >= 30)
+				{
+					scoreManager.SetCurrentScore();
+					Invoke("YouWin", 1.0f);
+				}
+			}
+			else if (difficulty == 3)
+			{
+				if(wave < 50)
+				{
+					wave ++;
+					enemySpawner.EnemyNumber(wave);
+				}
+				else if (wave >= 50)
+				{
+					scoreManager.SetCurrentScore();
+					Invoke("YouWin", 1.0f);
+				}
 			}
 		}
-		else if(difficulty == 2)
+		else if (gameMode == "Endless")
 		{
-			if(wave < 30)
-			{
-				wave ++;
-				enemySpawner.EnemyNumber(wave);
-			}
-			else if (wave >= 30)
-			{
-				scoreManager.SetCurrentScore();
-				Invoke("YouWin", 1.0f);
-			}
+			wave ++;
+			enemySpawner.EnemyNumber(wave);
 		}
-		else if (difficulty == 3)
+		else if (gameMode == "Boss")
 		{
-			if(wave < 50)
+			if(wave < 5)
 			{
 				wave ++;
 				enemySpawner.EnemyNumber(wave);
 			}
-			else if (wave >= 50)
+			else if (wave >= 5)
 			{
 				scoreManager.SetCurrentScore();
 				Invoke("YouWin", 1.0f);
@@ -135,11 +158,11 @@ public class GameScene : MonoBehaviour {
 				AnalyticTest();
 			}
 		
-		if(wave == 10 || wave == 20 || wave == 30 || wave == 40 || wave == 50)
+		if(wave % 10 == 0)
 		{
 			musicManager.PlayGameMusic(bossMusic, true);
 		}
-		else if(wave == 11 || wave == 21 || wave == 31 || wave == 41 || wave == 51)
+		else if(wave % 10 == 1)
 		{
 			NextSong();
 		}
@@ -186,7 +209,7 @@ public class GameScene : MonoBehaviour {
 	{
 		Analytics.CustomEvent("waveCompletion", new Dictionary<string, object>
 		{
-			{"wavePassed", "Wave: " + (wave-1).ToString()}
+			{"wavePassed", "Wave: " + (wave).ToString()}
 		});
 	}
 }

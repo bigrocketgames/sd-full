@@ -61,6 +61,15 @@ public class PlayerLaser : MonoBehaviour {
 	public void FigureDamage(int diff, int wave)
 	{
 		laserDamage = (5 * difficulty) + wave;
+		
+		if (difficulty == 2)
+		{
+			laserDamage = (int)(laserDamage*0.75f);
+		}
+		else if(difficulty == 3)
+		{
+			laserDamage = (int)(laserDamage*0.5f);
+		}
 	}
 
 }

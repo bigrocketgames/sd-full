@@ -45,8 +45,6 @@ public class MoveGameModeChoicesRight : MonoBehaviour {
 	
 	void OnMouseUp()
 	{
-		print (myRect.position.x);
-		
 		if (myRect.position.x == 0)
 		{
 			moveToSpot = "Right1";

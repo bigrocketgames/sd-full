@@ -1,24 +1,19 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\bossBeginExplode.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\StarbaseController.cs">
     <Files>
-      <File FileName="Assets\Scripts\EnemySpawner.cs" Line="38" Column="43" />
-      <File FileName="Assets\Scripts\EnemyController.cs" Line="68" Column="3" />
-      <File FileName="Assets\Scripts\ShipShieldController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\StarbaseShieldController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\EnemyLaser.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\BossController.cs" Line="149" Column="29" />
-      <File FileName="Assets\Scripts\bossBeginExplode.cs" Line="34" Column="11" />
-      <File FileName="Assets\Scripts\PlayerLaser.cs" Line="60" Column="14" />
-      <File FileName="Assets\Scripts\GameScene.cs" Line="149" Column="3" />
-      <File FileName="Assets\Scripts\DiffMenu.cs" Line="20" Column="4" />
+      <File FileName="Assets\Scripts\MeteorController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ResultsMenu.cs" Line="75" Column="3" />
+      <File FileName="Assets\Scripts\ShipShieldController.cs" Line="30" Column="96" />
+      <File FileName="Assets\Scripts\ScoreManager.cs" Line="57" Column="3" />
+      <File FileName="Assets\Scripts\StarbaseController.cs" Line="146" Column="70" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="Assembly-CSharp" expanded="True">
             <Node name="Scripts" expanded="True">
-              <Node name="bossBeginExplode.cs" selected="True" />
+              <Node name="StarbaseController.cs" selected="True" />
             </Node>
           </Node>
         </State>

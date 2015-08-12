@@ -3,9 +3,7 @@ using System.Collections;
 
 public class EnemyController : MonoBehaviour {
 	
-	public GameObject blueEnemyLaser;
-	public GameObject greenEnemyLaser;
-	public GameObject redEnemyLaser;
+	public GameObject[] enemyLasers;
 	public AudioClip shipExplode;
 	
 	private GameScene gameScene;
@@ -77,20 +75,9 @@ public class EnemyController : MonoBehaviour {
 	
 	void EnemyFire()
 	{
-		int enemyColorChoice = Random.Range(1,4);
+		int enemyColorChoice = Random.Range(0,3);
 		
-		if(enemyColorChoice == 1)
-		{
-			beam = Instantiate(blueEnemyLaser, transform.position - offset, Quaternion.identity) as GameObject;
-		}
-		else if(enemyColorChoice == 2)
-		{
-			beam = Instantiate(greenEnemyLaser, transform.position - offset, Quaternion.identity) as GameObject;
-		}
-		else if(enemyColorChoice == 3)
-		{
-			beam = Instantiate(redEnemyLaser, transform.position - offset, Quaternion.identity) as GameObject;
-		}
+		beam = Instantiate(enemyLasers[enemyColorChoice], transform.position - offset, Quaternion.identity) as GameObject;
 		beam.GetComponent<Rigidbody2D>().velocity = new Vector3 (0, -laserSpeed, 0);
 	}
 	
@@ -111,6 +98,7 @@ public class EnemyController : MonoBehaviour {
 	{
 		
 		health = (baseHealth * difficulty) + (wave * 5);
+		
 		if (this.tag == "Medium")
 		{
 			health *= (int)1.5f;

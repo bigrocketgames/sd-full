@@ -38,11 +38,7 @@ public class PowerUpSpawner : MonoBehaviour {
 		{
 			GameObject shipShields = Instantiate(shipShieldUp,enemyPos,Quaternion.identity)as GameObject;
 		}
-		else if(dropPowerUp == 37)
-		{
-			GameObject extraLife = Instantiate(ship1Up,enemyPos, Quaternion.identity) as GameObject;
-			extraLife.AddComponent<PolygonCollider2D>();
-		}
+
 	}
 	
 	public void StarbasePowerUp(Vector3 meteorPos)

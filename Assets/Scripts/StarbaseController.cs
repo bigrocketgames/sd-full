@@ -143,7 +143,7 @@ public class StarbaseController : MonoBehaviour {
 		else
 		{
 			weaponFireRate -= 0.1f;
-			//TODO - cancel and reinvoke the fire call
+			//TODO - cancel and reinvoke the fire call with new weaponFireRate
 		}
 	}
 

@@ -50,6 +50,10 @@ public class ScoreManager : MonoBehaviour {
 		{
 			points *= 3;
 		}
+		else if(shipDiff == "Boss1" || shipDiff == "Boss2" || shipDiff == "Boss3" || shipDiff == "Boss4" || shipDiff == "Boss5")
+		{
+			points *= 100;
+		}
 		
 		score += points;
 		scoreText.text = "Score: " + score;

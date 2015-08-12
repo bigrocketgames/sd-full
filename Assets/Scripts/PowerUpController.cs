@@ -62,11 +62,6 @@ public class PowerUpController : MonoBehaviour {
 				playerController.ActivateShields();
 				Destroy(gameObject);
 			}
-			else if(this.tag == "1Up")
-			{
-				playerController.Player1Up();
-				Destroy(gameObject);
-			}
 			else if(this.tag == "StarbaseLaserUp")
 			{
 				print ("need to make starbase, and starbase guns");

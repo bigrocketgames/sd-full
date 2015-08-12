@@ -101,11 +101,11 @@ public class BossController : MonoBehaviour {
 		
 		health = (baseHealth * difficulty) + (wave * 20);
 		
-		if (this.tag == "Medium")
+		if (difficulty == 2)
 		{
 			health *= (int)1.5f;
 		}
-		else if(this.tag == "Hard")
+		else if(difficulty == 3)
 		{
 			health *= 2;
 		}
@@ -124,8 +124,6 @@ public class BossController : MonoBehaviour {
 		sfxManager.PlaySFX(shipExplode);
 		transform.position = transform.position;
 		scoreManager.SetScoreText(this.tag);
-		PowerUpSpawner powerUpSpawner = GameObject.FindObjectOfType<PowerUpSpawner>();
-		powerUpSpawner.ShipPowerUp(transform.position);
 		explosionCount = 0;
 		shipExplodeAnim.SetTrigger("beginBossExplode");
 	}
@@ -143,10 +141,10 @@ public class BossController : MonoBehaviour {
 		}
 		else
 		{
-			sfxManager.PlaySFX(shipExplode);
-			shipExplodeAnim.SetTrigger("bossExploding");
 			EnemySpawner enemySpawner = GameObject.FindObjectOfType<EnemySpawner>();
 			enemySpawner.EnemyDead();
+			sfxManager.PlaySFX(shipExplode);
+			shipExplodeAnim.SetTrigger("bossExploding");
 		}
 	}
 	
