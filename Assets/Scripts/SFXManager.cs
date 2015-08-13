@@ -47,4 +47,19 @@ public class SFXManager : MonoBehaviour {
 		sfxSource.loop = false;
 		sfxSource.Play ();
 	}
+	
+	public void Pause()
+	{
+		sfxSource.Pause();
+	}
+	
+	public void UnPause()
+	{
+		sfxSource.UnPause();
+	}
+	
+	public void StopSounds()
+	{
+		sfxSource.Stop();
+	}
 }

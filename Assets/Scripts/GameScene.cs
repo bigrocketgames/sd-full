@@ -18,6 +18,7 @@ public class GameScene : MonoBehaviour {
 	private float startTime;
 	private string gameMode;
 	
+	public GameObject playerHealthBar;
 	public AudioClip[] gameMusicArray;
 	public AudioClip bossMusic;
 	public GameObject pauseButton;
@@ -175,7 +176,10 @@ public class GameScene : MonoBehaviour {
 	
 	public void OnPause()
 	{
+		playerHealthBar.SetActive(false);
 		pauseButton.SetActive(false);
+		musicManager.PauseMusic();
+		sfxManager.Pause();
 		pauseMenu.SetActive(true);
 		musicSlider.SetActive(true);
 		sfxSlider.SetActive(true);
@@ -185,6 +189,9 @@ public class GameScene : MonoBehaviour {
 	
 	public void OnUnPause()
 	{
+		playerHealthBar.SetActive(true);
+		musicManager.UnPauseMusic();
+		sfxManager.UnPause();
 		pauseMenu.SetActive(false);
 		musicSlider.SetActive(false);
 		sfxSlider.SetActive(false);

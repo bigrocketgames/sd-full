@@ -60,15 +60,15 @@ public class PlayerLaser : MonoBehaviour {
 	//Determines damage to inflict on the enemies with my lasers
 	public void FigureDamage(int diff, int wave)
 	{
-		laserDamage = (5 * difficulty) + wave;
+		laserDamage = (5 * diff) + wave;
 		
-		if (difficulty == 2)
+		if (diff == 2)
 		{
-			laserDamage = (int)(laserDamage*0.75f);
+			laserDamage = (int)(laserDamage*0.90f);
 		}
-		else if(difficulty == 3)
+		else if(diff == 3)
 		{
-			laserDamage = (int)(laserDamage*0.5f);
+			laserDamage = (int)(laserDamage*0.80f);
 		}
 	}
 

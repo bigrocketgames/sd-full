@@ -8,7 +8,7 @@ public class StarbaseController : MonoBehaviour {
 	public Image starbaseHealthfill;
 	public GameObject starbaseShield;
 	
-	private int startHealth = 1000;
+	private int startHealth;
 	private int health;
 	private int level;
 	private float weaponFireRate = 5.0f;
@@ -21,6 +21,7 @@ public class StarbaseController : MonoBehaviour {
 		starbaseShield.SetActive(false);
 		scoreManager = GameObject.FindObjectOfType<ScoreManager>();
 		difficulty = PlayerPrefsManager.GetDifficulty();
+		startHealth = 1000 * difficulty;
 		healthSlider.maxValue = startHealth;
 		health = startHealth;
 		healthSlider.value = health;

@@ -32,7 +32,8 @@ public class MusicManager : MonoBehaviour {
 	}
 	
 	void OnLevelWasLoaded(int level)
-	{
+	{	
+		currentMusic = musicSource.clip;
 		AudioClip thisLevelMusic = levelMusicChangeArray[level];
 				
 		if(thisLevelMusic && (currentMusic != thisLevelMusic))
@@ -61,5 +62,20 @@ public class MusicManager : MonoBehaviour {
 	public void ChangeVolume(float volume)
 	{
 		musicSource.volume = volume;
+	}
+	
+	public void PauseMusic()
+	{
+		musicSource.Pause();
+	}
+	
+	public void UnPauseMusic()
+	{
+		musicSource.UnPause();
+	}
+	
+	public void StopMusic()
+	{
+		musicSource.Stop();
 	}
 }
