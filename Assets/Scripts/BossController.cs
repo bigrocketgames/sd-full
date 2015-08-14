@@ -3,13 +3,14 @@ using System.Collections;
 
 public class BossController : MonoBehaviour {
 	
-	public GameObject blueEnemyLaser;
-	public GameObject greenEnemyLaser;
-	public GameObject redEnemyLaser;
+	public GameObject bossLaserOrange;
+	public GameObject bossLaserYellow;
+	public GameObject bossLaserRed;
+	public GameObject bossLaserBlue;
+	public GameObject bossLaserGreen;
 	public AudioClip shipExplode;
 	
 	private GameScene gameScene;
-	private PlayerLaser playerLaser;
 	
 	private int baseHealth = 100;
 	private int health;
@@ -22,21 +23,16 @@ public class BossController : MonoBehaviour {
 	private bool isDead = false;
 	private int explosionCount;
 	
-	private Vector3 offset = new Vector3(0f, 0.5f, 0f);
-	private GameObject beam;
 	private float repeatFireRate;
-	private float laserSpeed = 3.0f;
+	private float laserSpeed = 4.0f;
 	private Animator shipExplodeAnim;
-	private PolygonCollider2D shipCollider;
 	
 	private ScoreManager scoreManager;
-	private StarbaseController starbaseController;
 	private SFXManager sfxManager;
 	
 	// Use this for initialization
 	void Start () {
 		shipExplodeAnim = GetComponent<Animator>();
-		shipCollider = GetComponent<PolygonCollider2D>();
 		gameScene = FindObjectOfType<GameScene>();
 		sfxManager = FindObjectOfType<SFXManager>();
 		wave = gameScene.GetWave();
@@ -44,7 +40,6 @@ public class BossController : MonoBehaviour {
 		DetermineHealth();
 		
 		repeatFireRate = 3.0f - (0.01f * wave);
-		laserSpeed = 3.0f + (0.03f * wave);
 		InvokeRepeating("NextDestination",0f,1.0f);
 		InvokeRepeating("EnemyFire",0f,repeatFireRate);
 		
@@ -66,21 +61,32 @@ public class BossController : MonoBehaviour {
 	
 	void EnemyFire()
 	{
-		int enemyColorChoice = Random.Range(1,4);
+		switch (this.tag)
+		{
+		case "Boss1":
+			Vector3 beamOffset1 = new Vector3(-0.52f, -0.79f, 0);
+			Vector3 beamOffset2 = new Vector3(0.52f, -0.79f, 0);
+			GameObject beam1 = Instantiate(bossLaserOrange, transform.position + beamOffset1, Quaternion.identity) as GameObject;
+			GameObject beam2 = Instantiate(bossLaserOrange, transform.position + beamOffset2, Quaternion.identity) as GameObject;
+			beam1.GetComponent<Rigidbody2D>().velocity = new Vector3 (0, -laserSpeed, 0);
+			beam2.GetComponent<Rigidbody2D>().velocity = new Vector3 (0, -laserSpeed, 0);
+			break;
+		case "Boss2":
+			
+			break;
+		case "Boss3":
 		
-		if(enemyColorChoice == 1)
-		{
-			beam = Instantiate(blueEnemyLaser, transform.position - offset, Quaternion.identity) as GameObject;
+			break;
+		case "Boss4":
+		
+			break;
+		case "Boss5":
+		
+			break;
 		}
-		else if(enemyColorChoice == 2)
-		{
-			beam = Instantiate(greenEnemyLaser, transform.position - offset, Quaternion.identity) as GameObject;
-		}
-		else if(enemyColorChoice == 3)
-		{
-			beam = Instantiate(redEnemyLaser, transform.position - offset, Quaternion.identity) as GameObject;
-		}
-		beam.GetComponent<Rigidbody2D>().velocity = new Vector3 (0, -laserSpeed, 0);
+			
+		
+		
 	}
 	
 	public void DoDamage(int damage)
