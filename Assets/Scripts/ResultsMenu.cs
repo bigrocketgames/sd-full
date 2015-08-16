@@ -12,6 +12,7 @@ public class ResultsMenu : MonoBehaviour {
 	public Text newHighScoreText;
 	private ScoreManager scoreManager;
 	private SFXManager sfxManager;
+	private LevelManager levelManager;
 
 	private int highScore;
 	private int currentScore;
@@ -21,14 +22,19 @@ public class ResultsMenu : MonoBehaviour {
 		newHighScore.SetActive(false);
 		scoreManager = FindObjectOfType<ScoreManager>();
 		sfxManager = FindObjectOfType<SFXManager>();
+		levelManager = FindObjectOfType<LevelManager>();
 		resultText.text = PlayerPrefsManager.GetResult();
 		CheckHighScore();
 		SetScoreText();
 	}
 	
 	// Update is called once per frame
-	void Update () {
-	
+	void Update () 
+	{
+		if(Input.GetKeyUp(KeyCode.Escape))
+		{
+			levelManager.LoadLevel("Main Menu");
+		}
 	}
 	
 	void CheckHighScore()

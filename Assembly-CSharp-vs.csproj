@@ -95,6 +95,7 @@
      <Compile Include="Assets\Scripts\Shredder.cs" />
      <Compile Include="Assets\Scripts\SplashScreen.cs" />
      <Compile Include="Assets\Scripts\StarbaseController.cs" />
+     <Compile Include="Assets\Scripts\StarbaseLaserGun.cs" />
      <Compile Include="Assets\Scripts\StarbaseShieldController.cs" />
      <Compile Include="Assets\Scripts\bossBeginExplode.cs" />
  <Reference Include="UnityEngine.UI">

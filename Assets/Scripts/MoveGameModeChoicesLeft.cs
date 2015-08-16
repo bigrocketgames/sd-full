@@ -4,13 +4,16 @@ using System.Collections;
 public class MoveGameModeChoicesLeft : MonoBehaviour {
 
 	public RectTransform myRect;
+	public AudioClip modeMove;
 	
 	private string moveToSpot;
 	private GameObject rightArrow;
+	private SFXManager sfxManager;
 	
 	void Start ()
 	{
 		rightArrow = GameObject.FindGameObjectWithTag("arrowRight");
+		sfxManager = FindObjectOfType<SFXManager>();
 	}
 	
 	// Update is called once per frame
@@ -27,7 +30,7 @@ public class MoveGameModeChoicesLeft : MonoBehaviour {
 		
 		if (moveToSpot == "Left1")
 		{
-			myRect.position = new Vector3(Mathf.MoveTowards(myRect.position.x, -6f, 6*Time.deltaTime),0,0);
+			myRect.position = new Vector3(Mathf.MoveTowards(myRect.position.x, -6f, 10*Time.deltaTime),0,0);
 			if(myRect.position.x == -6f)
 			{
 				moveToSpot = "";
@@ -35,7 +38,7 @@ public class MoveGameModeChoicesLeft : MonoBehaviour {
 		}
 		else if (moveToSpot == "Left2")
 		{
-			myRect.position = new Vector3(Mathf.MoveTowards(myRect.position.x, 0f, 6*Time.deltaTime),0,0);
+			myRect.position = new Vector3(Mathf.MoveTowards(myRect.position.x, 0f, 10*Time.deltaTime),0,0);
 			if(myRect.position.x == 0f)
 			{
 				moveToSpot = "";
@@ -44,9 +47,8 @@ public class MoveGameModeChoicesLeft : MonoBehaviour {
 	}
 	
 	void OnMouseUp()
-	{
-		print (myRect.position.x);
-		
+	{	
+		sfxManager.PlaySFX(modeMove);
 		if (myRect.position.x == -12f)
 		{
 			moveToSpot = "Left1";

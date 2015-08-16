@@ -27,6 +27,14 @@ public class ButtonChoice : MonoBehaviour {
 		exitHit.SetActive(true);
 	}
 	
+	void Update ()
+	{
+		if(Input.GetKeyUp(KeyCode.Escape))
+		{
+			Application.Quit();
+		}
+	}
+	
 	public void ButtonPress(string Button)
 	{
 		if(Button == "play")

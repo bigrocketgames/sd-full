@@ -46,6 +46,16 @@ public class ShipShieldController : MonoBehaviour {
 				Deactivate();
 			}
 		}
+		else if(coll.gameObject.tag == "BossLaser")
+		{
+			shieldHealth -= 2;
+			Destroy(coll.gameObject);
+			
+			if(shieldHealth <= 0)
+			{
+				Deactivate();
+			}
+		}
 	}
 	
 	public void Refresh()

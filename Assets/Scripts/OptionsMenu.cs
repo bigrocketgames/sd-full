@@ -24,6 +24,11 @@ public class OptionsMenu : MonoBehaviour {
 	void Update () {
 		musicManager.ChangeVolume (musicVolumeSlider.value);
 		sfxManager.ChangeVolume (sfxVolumeSlider.value);
+		
+		if(Input.GetKeyUp(KeyCode.Escape))
+		{
+			levelManager.LoadLevel("Main Menu");
+		}
 	}
 	
 	public void SaveAndExit()

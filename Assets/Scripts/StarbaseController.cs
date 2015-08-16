@@ -1,17 +1,35 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class StarbaseController : MonoBehaviour {
 	
 	public Slider healthSlider;
 	public Image starbaseHealthfill;
 	public GameObject starbaseShield;
+	public GameObject starbaseGun11;
+	public GameObject starbaseGun12;
+	public GameObject starbaseGun13;
+	public GameObject starbaseGun21;
+	public GameObject starbaseGun22;
+	public GameObject starbaseGun23;
 	
+	public bool gun11Missing = true;
+	public bool gun12Missing = true;
+	public bool gun13Missing = true;
+	public bool gun21Missing = true;
+	public bool gun22Missing = true;
+	public bool gun23Missing = true;
+	
+	private GameObject gun11;
+	private GameObject gun12;
+	private GameObject gun13;
+	private GameObject gun21;
+	private GameObject gun22;
+	private GameObject gun23;
 	private int startHealth;
 	private int health;
-	private int level;
-	private float weaponFireRate = 5.0f;
 	private int difficulty;
 	
 	private ScoreManager scoreManager;
@@ -25,7 +43,6 @@ public class StarbaseController : MonoBehaviour {
 		healthSlider.maxValue = startHealth;
 		health = startHealth;
 		healthSlider.value = health;
-		level = 1;
 		
 		Vector3 HealthBarOffset = new Vector3 (0f, 1.85f, -2);
 		healthSlider.transform.position = transform.position + HealthBarOffset;
@@ -111,40 +128,51 @@ public class StarbaseController : MonoBehaviour {
 	
 	public void StarbaseWeaponUpgrade()
 	{
-		if(level == 1)
+	
+		if(gun11Missing)
 		{
-			//TODO - implement first gun
-			level++;
-		}
-		else if(level == 2)
-		{
-			//TODO - add second gun
-			level++;
-		}
-		else if(level == 3)
-		{
-			//TODO - add third gun
-			level++;
-		}
-		else if(level == 4)
-		{
-			//TODO - upgarde first gun to two shots
-			level++;
-		}
-		else if(level == 5)
-		{
-			//TODO - upgarde second gun to two shots
-			level++;
-		}
-		else if(level == 6)
-		{
-			//TODO - upgarde third gun to two shots
-			level++;
+			gun11 = Instantiate(starbaseGun11, starbaseGun11.transform.position,Quaternion.identity) as GameObject;
+			gun11Missing = false;
 		}
 		else
 		{
-			weaponFireRate -= 0.1f;
-			//TODO - cancel and reinvoke the fire call with new weaponFireRate
+			if(gun12Missing)
+			{
+				gun12 = Instantiate(starbaseGun12, starbaseGun12.transform.position,Quaternion.identity) as GameObject;
+				gun12Missing = false;
+			}
+			else
+			{
+				if(gun13Missing)
+				{
+					gun13 = Instantiate(starbaseGun13, starbaseGun13.transform.position,Quaternion.identity) as GameObject;
+					gun13Missing = false;
+				}
+				else
+				{
+					if(gun21Missing)
+					{
+						gun21 = Instantiate(starbaseGun21, starbaseGun21.transform.position,Quaternion.identity) as GameObject;
+						gun21Missing = false;
+					}
+					else
+					{
+						if(gun22Missing)
+						{
+							gun22 = Instantiate(starbaseGun22, starbaseGun22.transform.position,Quaternion.identity) as GameObject;
+							gun22Missing = false;
+						}
+						else
+						{
+							if(gun23Missing)
+							{
+								gun23 = Instantiate(starbaseGun23, starbaseGun23.transform.position,Quaternion.identity) as GameObject;
+								gun23Missing = false;
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 

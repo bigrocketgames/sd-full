@@ -12,6 +12,14 @@ public class DiffMenu : MonoBehaviour {
 		sfxManager = FindObjectOfType<SFXManager>();
 	}
 	
+	void Update ()
+	{
+		if(Input.GetKeyUp(KeyCode.Escape))
+		{
+			levelManager.LoadLevel("ModeChoice");
+		}
+	}
+	
 	public void DifficultySelect (string Button)
 	{
 		if (Button == "Easy")

@@ -58,6 +58,11 @@ public class GameScene : MonoBehaviour {
 		{
 			NextSong();
 		}
+		
+		if(Input.GetKeyUp(KeyCode.Escape))
+		{
+			OnPause();
+		}
 	}
 	
 	void StartMusic()

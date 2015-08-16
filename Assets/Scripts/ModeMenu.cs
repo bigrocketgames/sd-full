@@ -11,6 +11,14 @@ public class ModeMenu : MonoBehaviour {
 		sfxManager = FindObjectOfType<SFXManager>();
 		levelManager = FindObjectOfType<LevelManager>();
 	}
+	
+	void Update ()
+	{
+		if(Input.GetKeyUp(KeyCode.Escape))
+		{
+			levelManager.LoadLevel("ShipChoice");
+		}
+	}
 
 	public void GameModeChoice(string Mode)
 	{

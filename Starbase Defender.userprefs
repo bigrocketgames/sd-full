@@ -1,21 +1,23 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\BossController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerLaser.cs">
     <Files>
-      <File FileName="Assets\Scripts\BossLaserScript.cs" Line="8" Column="2" />
-      <File FileName="Assets\Scripts\GameScene.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\StarbaseController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\PlayerController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\PlayerLaser.cs" Line="70" Column="4" />
-      <File FileName="Assets\Scripts\EnemyLaser.cs" Line="6" Column="2" />
-      <File FileName="Assets\Scripts\BossController.cs" Line="69" Column="50" />
+      <File FileName="Assets\Scripts\StarbaseController.cs" Line="176" Column="4" />
+      <File FileName="Assets\Scripts\PowerUpSpawner.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\PlayerController.cs" Line="65" Column="74" />
+      <File FileName="Assets\Scripts\PowerUpController.cs" Line="66" Column="5" />
+      <File FileName="Assets\Scripts\StarbaseLaserGun.cs" Line="21" Column="14" />
+      <File FileName="Assets\Scripts\MusicManager.cs" Line="17" Column="2" />
+      <File FileName="Assets\Scripts\Shredder.cs" Line="8" Column="75" />
+      <File FileName="Assets\Scripts\EnemyController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\PlayerLaser.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="Assembly-CSharp" expanded="True">
             <Node name="Scripts" expanded="True">
-              <Node name="BossController.cs" selected="True" />
+              <Node name="PlayerLaser.cs" selected="True" />
             </Node>
           </Node>
         </State>
