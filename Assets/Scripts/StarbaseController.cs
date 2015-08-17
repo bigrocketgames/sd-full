@@ -31,6 +31,7 @@ public class StarbaseController : MonoBehaviour {
 	private int startHealth;
 	private int health;
 	private int difficulty;
+	private StarbaseLaserGun starbaseLaserGun;
 	
 	private ScoreManager scoreManager;
 	
@@ -129,30 +130,32 @@ public class StarbaseController : MonoBehaviour {
 	public void StarbaseWeaponUpgrade()
 	{
 	
-		if(gun11Missing)
+		if(gun11Missing && gun21Missing)
 		{
 			gun11 = Instantiate(starbaseGun11, starbaseGun11.transform.position,Quaternion.identity) as GameObject;
 			gun11Missing = false;
 		}
 		else
 		{
-			if(gun12Missing)
+			if(gun12Missing && gun22Missing)
 			{
 				gun12 = Instantiate(starbaseGun12, starbaseGun12.transform.position,Quaternion.identity) as GameObject;
 				gun12Missing = false;
 			}
 			else
 			{
-				if(gun13Missing)
+				if(gun13Missing && gun23Missing)
 				{
 					gun13 = Instantiate(starbaseGun13, starbaseGun13.transform.position,Quaternion.identity) as GameObject;
 					gun13Missing = false;
 				}
 				else
 				{
-					if(gun21Missing)
+					if(gun21Missing && !gun11Missing)
 					{
 						gun21 = Instantiate(starbaseGun21, starbaseGun21.transform.position,Quaternion.identity) as GameObject;
+						Destroy(gun11);
+						gun11Missing = true;
 						gun21Missing = false;
 					}
 					else
@@ -160,6 +163,8 @@ public class StarbaseController : MonoBehaviour {
 						if(gun22Missing)
 						{
 							gun22 = Instantiate(starbaseGun22, starbaseGun22.transform.position,Quaternion.identity) as GameObject;
+							Destroy(gun12);
+							gun12Missing = true;
 							gun22Missing = false;
 						}
 						else
@@ -167,6 +172,8 @@ public class StarbaseController : MonoBehaviour {
 							if(gun23Missing)
 							{
 								gun23 = Instantiate(starbaseGun23, starbaseGun23.transform.position,Quaternion.identity) as GameObject;
+								Destroy(gun13);
+								gun13Missing = true;
 								gun23Missing = false;
 							}
 						}
@@ -175,5 +182,4 @@ public class StarbaseController : MonoBehaviour {
 			}
 		}
 	}
-
 }

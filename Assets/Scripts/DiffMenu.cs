@@ -1,12 +1,32 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
 public class DiffMenu : MonoBehaviour {
 	
 	private SFXManager sfxManager;
 	private LevelManager levelManager;
 	
-	// Use this for initialization
+	void Awake ()
+	{
+		HZIncentivizedAd.AdDisplayListener listener = delegate(string adState, string adTag)
+		{
+			if(adState.Equals ("incentivized_result_complete"))
+			{
+				levelManager.LoadLevel("Game");
+			}
+			if(adState.Equals ("incentivized_result_incomplete"))
+			{
+				levelManager.LoadLevel("Game");
+			}
+			if(adState.Equals ("hide"))
+			{
+				levelManager.LoadLevel("Game");
+			}
+		};
+		
+		HZIncentivizedAd.setDisplayListener(listener);
+	}
 	void Start () {
 		levelManager = GameObject.FindObjectOfType<LevelManager>();
 		sfxManager = FindObjectOfType<SFXManager>();
@@ -36,11 +56,22 @@ public class DiffMenu : MonoBehaviour {
 		}
 		
 		playSFX();
+		
+		if (HZIncentivizedAd.isAvailable("default")) {
+			HZIncentivizedAd.show("default");
+		}
+		else
+		{
 		levelManager.LoadLevel("Game");
+		}
 	}
 	
 	public void playSFX()
 	{
 		sfxManager.PlayButtonPress();
 	}
+	
+	
+	
+	
 }

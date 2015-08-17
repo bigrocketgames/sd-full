@@ -1,23 +1,41 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerLaser.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Plugins\Android\unityads\AndroidManifest.xml">
     <Files>
-      <File FileName="Assets\Scripts\StarbaseController.cs" Line="176" Column="4" />
+      <File FileName="Assets\Plugins\Android\AndroidManifest.xml" Line="39" Column="79" />
+      <File FileName="Assets\Scripts\AdInitScript.cs" Line="1" Column="1" />
+      <File FileName="f:\Unity\Starbase Defender\Assets\Plugins\HZIncentivizedAd.cs" Line="1" Column="1" />
+      <File FileName="f:\Unity\Starbase Defender\Assets\Plugins\HZInterstitialAd.cs" Line="1" Column="1" />
+      <File FileName="f:\Unity\Starbase Defender\Assets\Plugins\HZVideoAd.cs" Line="1" Column="1" />
+      <File FileName="f:\Unity\Starbase Defender\Assets\Plugins\HeyzapAds.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ButtonChoice.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ResultsMenu.cs" Line="1" Column="1" />
+      <File FileName="Assets\Plugins\Android\Heyzap\AndroidManifest.xml" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\DiffMenu.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\GameScene.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\PowerUpSpawner.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\PlayerController.cs" Line="65" Column="74" />
-      <File FileName="Assets\Scripts\PowerUpController.cs" Line="66" Column="5" />
-      <File FileName="Assets\Scripts\StarbaseLaserGun.cs" Line="21" Column="14" />
-      <File FileName="Assets\Scripts\MusicManager.cs" Line="17" Column="2" />
-      <File FileName="Assets\Scripts\Shredder.cs" Line="8" Column="75" />
-      <File FileName="Assets\Scripts\EnemyController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\PlayerLaser.cs" Line="1" Column="1" />
+      <File FileName="Assets\Plugins\Android\unityads\AndroidManifest.xml" Line="20" Column="78" />
+      <File FileName="f:\Unity\Starbase Defender\Assets\Standard Assets\Editor\UnityAds\Scripts\UnityAdsPostprocessor.cs" Line="46" Column="10" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
-          <Node name="Assembly-CSharp" expanded="True">
-            <Node name="Scripts" expanded="True">
-              <Node name="PlayerLaser.cs" selected="True" />
+          <Node name="Assembly-CSharp-Editor-firstpass" expanded="True">
+            <Node name="Standard Assets" expanded="True">
+              <Node name="Editor" expanded="True">
+                <Node name="UnityAds" expanded="True">
+                  <Node name="Scripts" expanded="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+          <Node name="Assembly-CSharp-firstpass" expanded="True">
+            <Node name="Plugins" expanded="True">
+              <Node name="Android" expanded="True">
+                <Node name="unityads" expanded="True">
+                  <Node name="AndroidManifest.xml" selected="True" />
+                </Node>
+              </Node>
             </Node>
           </Node>
         </State>

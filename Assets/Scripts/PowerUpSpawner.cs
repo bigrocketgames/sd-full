@@ -43,7 +43,7 @@ public class PowerUpSpawner : MonoBehaviour {
 	
 	public void StarbasePowerUp(Vector3 meteorPos)
 	{
-		int dropPowerUp = Random.Range(3, 4);
+		int dropPowerUp = Random.Range(1, 21);
 		
 		if(dropPowerUp == 3)
 		{

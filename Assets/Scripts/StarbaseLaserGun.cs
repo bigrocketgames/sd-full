@@ -54,7 +54,7 @@ public class StarbaseLaserGun : MonoBehaviour {
 		}
 	}
 	
-	void GunDestroy(string name)
+	public void GunDestroy(string name)
 	{
 		switch (name)
 		{

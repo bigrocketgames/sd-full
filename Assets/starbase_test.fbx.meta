@@ -25,6 +25,8 @@ ModelImporter:
     100034: Icosphere.withred
     100036: Lamp
     100038: //RootNode
+    100040: Cylinder.004
+    100042: Cylinder.005
     400000: base.bluewindow
     400002: base.redwindow
     400004: Camera
@@ -45,6 +47,8 @@ ModelImporter:
     400034: Icosphere.withred
     400036: Lamp
     400038: //RootNode
+    400040: Cylinder.004
+    400042: Cylinder.005
     2300000: base.bluewindow
     2300002: base.redwindow
     2300004: Cube
@@ -62,6 +66,8 @@ ModelImporter:
     2300028: Icosphere.redwindow
     2300030: Icosphere.withblue
     2300032: Icosphere.withred
+    2300034: Cylinder.004
+    2300036: Cylinder.005
     3300000: base.bluewindow
     3300002: base.redwindow
     3300004: Cube
@@ -79,6 +85,8 @@ ModelImporter:
     3300028: Icosphere.redwindow
     3300030: Icosphere.withblue
     3300032: Icosphere.withred
+    3300034: Cylinder.004
+    3300036: Cylinder.005
     4300000: Icosphere.redwindow
     4300002: base.bluewindow
     4300004: Cylinder
@@ -96,6 +104,8 @@ ModelImporter:
     4300028: Icosphere.withred
     4300030: Icosphere.withblue
     4300032: Icosphere.bluewindow
+    4300034: Cylinder.005
+    4300036: Cylinder.004
   materials:
     importMaterials: 1
     materialName: 0

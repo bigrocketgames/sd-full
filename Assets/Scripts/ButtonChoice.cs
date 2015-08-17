@@ -16,6 +16,7 @@ public class ButtonChoice : MonoBehaviour {
 	
 	void Start ()
 	{
+		
 		mainMenuShip = GameObject.FindObjectOfType<MainMenuShip>();
 		play.SetActive(true);
 		options.SetActive(true);
