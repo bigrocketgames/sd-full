@@ -16,6 +16,11 @@ public class ButtonChoice : MonoBehaviour {
 	
 	void Start ()
 	{
+		// Your Publisher ID is: 782c3494fb4c83a6b382abbbb6c3cdc4
+		HeyzapAds.start("782c3494fb4c83a6b382abbbb6c3cdc4", HeyzapAds.FLAG_NO_OPTIONS);	
+		HZBannerAd.show(HZBannerAd.POSITION_TOP);
+		HZIncentivizedAd.fetch("reward");
+		HZVideoAd.fetch("reward");
 		
 		mainMenuShip = GameObject.FindObjectOfType<MainMenuShip>();
 		play.SetActive(true);

@@ -30,6 +30,8 @@ public class GameScene : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
+		HZBannerAd.hide();
+		
 		pauseMenu.SetActive(false);
 		musicSlider.SetActive(false);
 		sfxSlider.SetActive(false);

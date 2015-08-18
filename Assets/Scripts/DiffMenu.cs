@@ -15,14 +15,14 @@ public class DiffMenu : MonoBehaviour {
 			{
 				levelManager.LoadLevel("Game");
 			}
-			if(adState.Equals ("incentivized_result_incomplete"))
-			{
-				levelManager.LoadLevel("Game");
-			}
-			if(adState.Equals ("hide"))
-			{
-				levelManager.LoadLevel("Game");
-			}
+//			if(adState.Equals ("incentivized_result_incomplete"))
+//			{
+//				levelManager.LoadLevel("Game");
+//			}
+//			if(adState.Equals ("hide"))
+//			{
+//				levelManager.LoadLevel("Game");
+//			}
 		};
 		
 		HZIncentivizedAd.setDisplayListener(listener);
@@ -56,14 +56,7 @@ public class DiffMenu : MonoBehaviour {
 		}
 		
 		playSFX();
-		
-		if (HZIncentivizedAd.isAvailable("default")) {
-			HZIncentivizedAd.show("default");
-		}
-		else
-		{
-		levelManager.LoadLevel("Game");
-		}
+		PlayAd();
 	}
 	
 	public void playSFX()
@@ -71,7 +64,24 @@ public class DiffMenu : MonoBehaviour {
 		sfxManager.PlayButtonPress();
 	}
 	
-	
+	void PlayAd()
+	{
+		if (HZIncentivizedAd.isAvailable("reward"))
+		{
+			HZIncentivizedAd.show("reward");
+		}
+		else
+		{
+			if (HZVideoAd.isAvailable("reward"))
+			{
+				HZVideoAd.show("reward");
+			}
+			else
+			{
+				levelManager.LoadLevel("Game");
+			}
+		}
+	}
 	
 	
 }
