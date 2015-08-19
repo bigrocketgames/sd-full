@@ -2,28 +2,24 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\DiffMenu.cs">
     <Files>
-      <File FileName="Assets\Scripts\DiffMenu.cs" Line="18" Column="8" />
-      <File FileName="Assets\Plugins\Android\AndroidManifest.xml" Line="22" Column="5" />
-      <File FileName="Assets\Plugins\Android\Heyzap\AndroidManifest.xml" Line="4" Column="151" />
-      <File FileName="Assets\Scripts\AdInitScript.cs" Line="7" Column="3" />
-      <File FileName="Assets\Scripts\ButtonChoice.cs" Line="20" Column="83" />
-      <File FileName="Assets\Scripts\GameScene.cs" Line="33" Column="13" />
+      <File FileName="Assets\Scripts\DiffMenu.cs" Line="56" Column="35" />
+      <File FileName="Assets\Scripts\ButtonChoice.cs" Line="24" Column="1" />
+      <File FileName="Assets\Scripts\GameScene.cs" Line="1" Column="1" />
+      <File FileName="Assets\Plugins\HZIncentivizedAd.cs" Line="1" Column="1" />
+      <File FileName="Assets\Plugins\HeyzapAds.cs" Line="96" Column="22" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="Assembly-CSharp" expanded="True">
-            <Node name="Plugins" expanded="True">
-              <Node name="Android" expanded="True">
-                <Node name="Heyzap" expanded="True" />
-              </Node>
-            </Node>
             <Node name="Scripts" expanded="True">
               <Node name="DiffMenu.cs" selected="True" />
             </Node>
           </Node>
           <Node name="Assembly-CSharp-firstpass" expanded="True">
-            <Node name="Plugins" expanded="True" />
+            <Node name="Plugins" expanded="True">
+              <Node name="Android" expanded="True" />
+            </Node>
           </Node>
         </State>
       </Pad>

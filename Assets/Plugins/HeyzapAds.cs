@@ -89,13 +89,11 @@ public class HeyzapAds : MonoBehaviour {
   }
 
   public static void start(string publisher_id, int options) {
-    #if !UNITY_EDITOR
-
     #if UNITY_ANDROID
     HeyzapAdsAndroid.start(publisher_id, options);
     #endif
 
-    #if UNITY_IPHONE
+	#if UNITY_IPHONE && !UNITY_EDITOR
     HeyzapAdsIOS.start(publisher_id, options);
     #endif
 
@@ -104,8 +102,6 @@ public class HeyzapAds : MonoBehaviour {
     HZVideoAd.initReceiver();
     HZIncentivizedAd.initReceiver();
     HZBannerAd.initReceiver();
-
-    #endif
   }
 
   public static void showMediationTestSuite() {

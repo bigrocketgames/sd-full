@@ -7,27 +7,7 @@ public class DiffMenu : MonoBehaviour {
 	private SFXManager sfxManager;
 	private LevelManager levelManager;
 	
-	void Awake ()
-	{
-		HZIncentivizedAd.AdDisplayListener listener = delegate(string adState, string adTag)
-		{
-			if(adState.Equals ("incentivized_result_complete"))
-			{
-				levelManager.LoadLevel("Game");
-			}
-//			if(adState.Equals ("incentivized_result_incomplete"))
-//			{
-//				levelManager.LoadLevel("Game");
-//			}
-//			if(adState.Equals ("hide"))
-//			{
-//				levelManager.LoadLevel("Game");
-//			}
-		};
-		
-		HZIncentivizedAd.setDisplayListener(listener);
-	}
-	void Start () {
+	void Start () {		
 		levelManager = GameObject.FindObjectOfType<LevelManager>();
 		sfxManager = FindObjectOfType<SFXManager>();
 	}
@@ -66,22 +46,36 @@ public class DiffMenu : MonoBehaviour {
 	
 	void PlayAd()
 	{
-		if (HZIncentivizedAd.isAvailable("reward"))
+		if (HZIncentivizedAd.isAvailable("default"))
 		{
-			HZIncentivizedAd.show("reward");
+			HZIncentivizedAd.show("default");
 		}
 		else
 		{
-			if (HZVideoAd.isAvailable("reward"))
-			{
-				HZVideoAd.show("reward");
-			}
-			else
+			HeyzapAdsAndroid.showDebugLogs();
+			levelManager.LoadLevel("Game");
+		}
+		
+		HZIncentivizedAd.AdDisplayListener listener = delegate(string adState, string adTag)
+		{
+			if(adState.Equals ("incentivized_result_complete"))
 			{
 				levelManager.LoadLevel("Game");
 			}
-		}
+			if(adState.Equals ("failed"))
+			{
+				levelManager.LoadLevel("Game");
+			}
+			if(adState.Equals ("fetch_failed"))
+			{
+				levelManager.LoadLevel("Game");
+			}
+			if(adState.Equals ("available"))
+			{
+				HZIncentivizedAd.show("default");
+			}
+		};
+		
+		HZIncentivizedAd.setDisplayListener(listener);
 	}
-	
-	
 }
