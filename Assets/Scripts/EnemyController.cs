@@ -9,7 +9,7 @@ public class EnemyController : MonoBehaviour {
 	private GameScene gameScene;
 	private PlayerLaser playerLaser;
 	
-	private int baseHealth = 10;
+	private int baseHealth = 1;
 	private int health;
 	private int difficulty;
 	private int wave;
@@ -97,15 +97,15 @@ public class EnemyController : MonoBehaviour {
 	private void DetermineHealth()
 	{
 		
-		health = (baseHealth * difficulty) + (wave * 5);
+		health = baseHealth;
 		
 		if (this.tag == "Medium")
 		{
-			health *= (int)1.5f;
+			health *= 2;
 		}
 		else if(this.tag == "Hard")
 		{
-			health *= 2;
+			health *= 3;
 		}
 	}
 	

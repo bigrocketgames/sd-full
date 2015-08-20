@@ -12,7 +12,7 @@ public class BossController : MonoBehaviour {
 	
 	private GameScene gameScene;
 	
-	private int baseHealth = 100;
+	private int baseHealth = 30;
 	private int health;
 	private int difficulty;
 	private int wave;
@@ -137,7 +137,7 @@ public class BossController : MonoBehaviour {
 	private void DetermineHealth()
 	{
 		
-		health = (baseHealth * difficulty) + (wave * 20);
+		health = baseHealth;
 		
 		if (difficulty == 2)
 		{

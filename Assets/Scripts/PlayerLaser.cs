@@ -5,17 +5,12 @@ public class PlayerLaser : MonoBehaviour {
 	
 	private EnemyController enemyController;
 	private BossController bossController;
-	private int laserDamage;
 	private int difficulty;
 	private int wave;
 	
 	// Use this for initialization
 	void Start () {
-		difficulty = PlayerPrefsManager.GetDifficulty();
 		GameScene gameScene = GameObject.FindObjectOfType<GameScene>();
-		wave = gameScene.GetWave();
-		
-		FigureDamage(difficulty,wave);
 	}
 	
 	void Update ()
@@ -33,7 +28,7 @@ public class PlayerLaser : MonoBehaviour {
 			if (!isDead)
 			{
 				Destroy(gameObject);
-				enemyController.DoDamage(laserDamage);
+				enemyController.DoDamage(1);
 			}
 			else
 			{
@@ -48,27 +43,12 @@ public class PlayerLaser : MonoBehaviour {
 			if(!isDead)
 			{
 				Destroy(gameObject);
-				bossController.DoDamage(laserDamage/2);
+				bossController.DoDamage(1);
 			}
 			else
 			{
 				return;
 			}
-		}
-	}
-	
-	//Determines damage to inflict on the enemies with my lasers
-	public void FigureDamage(int diff, int wave)
-	{
-		laserDamage = (5 * diff) + wave;
-		
-		if (diff == 2)
-		{
-			laserDamage = (int)(laserDamage*0.90f);
-		}
-		else if(diff == 3)
-		{
-			laserDamage = (int)(laserDamage*0.80f);
 		}
 	}
 

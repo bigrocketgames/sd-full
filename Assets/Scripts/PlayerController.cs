@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour {
 	private SFXManager sfxManager;
 	private int health;
 	private int startHealth = 10;
-	private int lives = 5;
+	private int lives = 3;
 	private SpriteRenderer shipSprite;
 	private ScoreManager scoreManager;
 	private ShipShieldController shipShieldController;
