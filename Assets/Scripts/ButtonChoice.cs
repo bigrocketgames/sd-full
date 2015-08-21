@@ -16,6 +16,8 @@ public class ButtonChoice : MonoBehaviour {
 	
 	void Start ()
 	{	
+		HZBannerAd.show(HZBannerAd.POSITION_BOTTOM);
+		
 		mainMenuShip = GameObject.FindObjectOfType<MainMenuShip>();
 		play.SetActive(true);
 		options.SetActive(true);

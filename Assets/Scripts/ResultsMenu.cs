@@ -19,6 +19,8 @@ public class ResultsMenu : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
+		HZBannerAd.show(HZBannerAd.POSITION_BOTTOM);
+		
 		newHighScore.SetActive(false);
 		scoreManager = FindObjectOfType<ScoreManager>();
 		sfxManager = FindObjectOfType<SFXManager>();
