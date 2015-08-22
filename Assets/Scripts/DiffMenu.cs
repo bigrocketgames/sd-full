@@ -18,6 +18,7 @@ public class DiffMenu : MonoBehaviour {
 	private LevelManager levelManager;
 	private int rewardNumber;
 	private string weaponUpgradeText;
+	private string rewardYesNo;
 	
 	void Start () {
 		adQuestionPanel.SetActive(false);
@@ -67,11 +68,27 @@ public class DiffMenu : MonoBehaviour {
 	
 	public void AnswerNo()
 	{
+		rewardYesNo = "No";
+		ok1Button.SetActive(false);
+		yesButton.SetActive(false);
+		noButton.SetActive(false);
+		fightButton.SetActive(true);
+		BackButton.SetActive(false);
+		adQuestionText.text = "Press Fight! when you are ready to enter battle.";
+	}
+	
+	public void LoadGame()
+	{
+		if(rewardYesNo == "No")
+		{
+			PlayerPrefsManager.SetWeaponUpgrade("1laser");
+		}
 		levelManager.LoadLevel("Game");
 	}
 	
 	public void PlayAd()
 	{
+		rewardYesNo = "Yes";
 		if (HZIncentivizedAd.isAvailable("default"))
 		{
 			HZIncentivizedAd.show("default");
@@ -128,11 +145,11 @@ public class DiffMenu : MonoBehaviour {
 	{
 		rewardNumber = Random.Range(1,101);
 		
-		if(rewardNumber >=75)
+		if(rewardNumber >=85)
 		{
 			weaponUpgradeText = "DoubleLasers";
 		}
-		else if(rewardNumber <=95)
+		else if(rewardNumber <=95 && rewardNumber > 85)
 		{
 			weaponUpgradeText = "TripleLasers";
 		}
@@ -140,5 +157,7 @@ public class DiffMenu : MonoBehaviour {
 		{
 			weaponUpgradeText = "FiveShooter";
 		}
+		
+		PlayerPrefsManager.SetWeaponUpgrade(weaponUpgradeText);
 	}
 }

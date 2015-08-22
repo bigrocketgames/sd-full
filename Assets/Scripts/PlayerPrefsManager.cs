@@ -12,6 +12,7 @@ public class PlayerPrefsManager : MonoBehaviour {
 	const string PLAYER_SHIP_KEY = "ship_choice";
 	const string MODE_CHOICE_KEY = "mode_choice";
 	const string RESULT_KEY = "result";
+	const string REWARD_WEAPON_KEY = "reward_upgrade";
 	
 	public static void SetResult(string result)
 	{
@@ -135,5 +136,15 @@ public class PlayerPrefsManager : MonoBehaviour {
 	public static string GetGameMode()
 	{
 		return PlayerPrefs.GetString(MODE_CHOICE_KEY);
+	}
+	
+	public static void SetWeaponUpgrade(string reward)
+	{
+		PlayerPrefs.SetString(REWARD_WEAPON_KEY, reward);
+	}
+	
+	public static string GetWeaponUpgrade()
+	{
+		return PlayerPrefs.GetString(REWARD_WEAPON_KEY);
 	}
 }

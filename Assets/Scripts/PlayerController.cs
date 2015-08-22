@@ -66,7 +66,7 @@ public class PlayerController : MonoBehaviour {
 		
 		shipSprite = GetComponent<SpriteRenderer>();
 		sfxManager = GameObject.FindObjectOfType<SFXManager>();
-		setPlayerLaser("1laser");
+		setPlayerLaser(PlayerPrefsManager.GetWeaponUpgrade());
 		InvokeRepeating("FireLaser", 0.5f, weaponRepeatRate);
 		
 		scoreManager = GameObject.FindObjectOfType<ScoreManager>();
@@ -173,13 +173,13 @@ public class PlayerController : MonoBehaviour {
 				GameObject beam = Instantiate(playerLaserColor, transform.position + offset, Quaternion.identity) as GameObject;
 				beam.GetComponent<Rigidbody2D>().velocity = new Vector3 (0, laserSpeed, 0);
 				break;
-			case "2laser":
+			case "DoubleLasers":
 				GameObject beam21 = Instantiate(playerLaserColor, transform.position + new Vector3(-.1f, 0.5f, 0f), Quaternion.identity) as GameObject;
 				GameObject beam22 = Instantiate(playerLaserColor, transform.position + new Vector3(.1f, 0.5f, 0f), Quaternion.identity) as GameObject;
 				beam21.GetComponent<Rigidbody2D>().velocity = new Vector3 (0, laserSpeed, 0);
 				beam22.GetComponent<Rigidbody2D>().velocity = new Vector3 (0, laserSpeed, 0);
 				break;
-			case "3laser":
+			case "TripleLasers":
 				GameObject beam31 = Instantiate(playerLaserColor, transform.position + offset, Quaternion.identity) as GameObject;
 				GameObject beam32 = Instantiate(playerLaserColor, transform.position + new Vector3(-.15f, 0.5f, 0f), Quaternion.Euler(0, 0, 10)) as GameObject;
 				GameObject beam33 = Instantiate(playerLaserColor, transform.position + new Vector3(.15f, 0.5f, 0f), Quaternion.Euler(0, 0, -10)) as GameObject;
@@ -187,7 +187,7 @@ public class PlayerController : MonoBehaviour {
 				beam32.GetComponent<Rigidbody2D>().velocity = new Vector3 (-1, laserSpeed, 0);
 				beam33.GetComponent<Rigidbody2D>().velocity = new Vector3 (1, laserSpeed, 0);
 				break;
-			case "5laser":
+			case "FiveShooter":
 				GameObject beam51 = Instantiate(playerLaserColor, transform.position + offset, Quaternion.identity) as GameObject;
 				GameObject beam52 = Instantiate(playerLaserColor, transform.position + new Vector3(-.15f, 0.5f, 0f), Quaternion.Euler(0, 0, 10)) as GameObject;
 				GameObject beam53 = Instantiate(playerLaserColor, transform.position + new Vector3(.15f, 0.5f, 0f), Quaternion.Euler(0, 0, -10)) as GameObject;
@@ -273,15 +273,15 @@ public class PlayerController : MonoBehaviour {
 	{
 		if(playerLaser == "1laser")
 		{
-			playerLaser = "2laser";
+			playerLaser = "DoubleLasers";
 		}
-		else if(playerLaser == "2laser")
+		else if(playerLaser == "DoubleLasers")
 		{
-			playerLaser = "3laser";
+			playerLaser = "TripleLasers";
 		}
-		else if(playerLaser == "3laser")
+		else if(playerLaser == "TripleLasers")
 		{
-			playerLaser = "5laser";
+			playerLaser = "FiveShooter";
 		}
 	}
 	

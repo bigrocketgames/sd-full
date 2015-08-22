@@ -23,32 +23,38 @@ public class PlayerLaser : MonoBehaviour {
 		if(coll.gameObject.tag == "Easy" || coll.gameObject.tag == "Medium" || coll.gameObject.tag == "Hard")
 		{
 			enemyController = coll.gameObject.GetComponent<EnemyController>();
-			bool isDead = enemyController.IsDead();
-			
-			if (!isDead)
+			if(coll.gameObject.transform.position.y <= 5)
 			{
-				Destroy(gameObject);
-				enemyController.DoDamage(1);
-			}
-			else
-			{
-				return;
+				bool isDead = enemyController.IsDead();
+				
+				if (!isDead)
+				{
+					Destroy(gameObject);
+					enemyController.DoDamage(1);
+				}
+				else
+				{
+					return;
+				}
 			}
 		}
 		else if (coll.gameObject.tag == "Boss1" || coll.gameObject.tag == "Boss2" || coll.gameObject.tag == "Boss3" || coll.gameObject.tag == "Boss4" || coll.gameObject.tag == "Boss5")
 		{
 			bossController = coll.gameObject.GetComponent<BossController>();
-			bool isDead = bossController.IsDead();
-			
-			if(!isDead)
-			{
-				Destroy(gameObject);
-				bossController.DoDamage(1);
-			}
-			else
-			{
-				return;
-			}
+			if(coll.gameObject.transform.position.y <= 5)
+			{	
+				bool isDead = bossController.IsDead();
+				
+				if(!isDead)
+				{
+					Destroy(gameObject);
+					bossController.DoDamage(1);
+				}
+				else
+				{
+					return;
+				}
+			}	
 		}
 	}
 
