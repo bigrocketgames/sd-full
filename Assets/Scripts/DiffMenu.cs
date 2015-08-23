@@ -95,7 +95,6 @@ public class DiffMenu : MonoBehaviour {
 		}
 		else
 		{
-			HeyzapAdsAndroid.showDebugLogs();
 			adQuestionText.text = "We encountered an error, but no worries, you still get an upgrade.  Click OK to receive your free upgrade.";
 			okButton.SetActive(true);
 			yesButton.SetActive(false);
@@ -145,7 +144,7 @@ public class DiffMenu : MonoBehaviour {
 	{
 		rewardNumber = Random.Range(1,101);
 		
-		if(rewardNumber >=85)
+		if(rewardNumber <=85)
 		{
 			weaponUpgradeText = "DoubleLasers";
 		}

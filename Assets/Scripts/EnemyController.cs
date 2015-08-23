@@ -52,7 +52,7 @@ public class EnemyController : MonoBehaviour {
 		xmin = camera.ViewportToWorldPoint(new Vector3(0,0,distance)).x + padding;
 		xmax = camera.ViewportToWorldPoint(new Vector3(1,1,distance)).x - padding;
 		
-		repeatFireRate = 3.0f - (0.01f * wave);
+		repeatFireRate = 2.5f - (0.01f * wave);
 		laserSpeed = 3.0f + (0.03f * wave);
 		InvokeRepeating("NextDestination",0f,1.0f);
 		InvokeRepeating("EnemyFire",0f,repeatFireRate);

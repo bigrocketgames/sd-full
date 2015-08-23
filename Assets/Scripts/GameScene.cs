@@ -46,6 +46,7 @@ public class GameScene : MonoBehaviour {
 		playerController.setPlayerShip(PlayerPrefsManager.GetPlayerShip());
 		enemySpawner.EnemyNumber(wave);
 		StartMusic();
+		ReportDifficulty();
 	}
 	
 	// Update is called once per frame
@@ -100,6 +101,11 @@ public class GameScene : MonoBehaviour {
 	
 	public void NextWave()
 	{
+		if( (wave) % 5 == 0)
+		{
+			ReportNonBossWave();
+		}
+		
 		if (gameMode == "Wave")
 		{
 			if(difficulty == 1)
@@ -149,6 +155,8 @@ public class GameScene : MonoBehaviour {
 		}
 		else if (gameMode == "Boss")
 		{
+			ReportBossWave();
+			
 			if(wave < 5)
 			{
 				wave ++;
@@ -160,11 +168,6 @@ public class GameScene : MonoBehaviour {
 				Invoke("YouWin", 1.0f);
 			}
 		}
-		
-		if( (wave) % 5 == 0)
-			{
-				AnalyticTest();
-			}
 		
 		if(wave % 10 == 0)
 		{
@@ -219,11 +222,27 @@ public class GameScene : MonoBehaviour {
 		levelManager.LoadLevel("Results");
 	}
 	
-	void AnalyticTest()
+	void ReportNonBossWave()
 	{
 		Analytics.CustomEvent("waveCompletion", new Dictionary<string, object>
 		{
-			{"wavePassed", "Wave: " + (wave).ToString()}
+			{"wavePassed", "Wave: " + wave.ToString()}
+		});
+	}
+	
+	void ReportBossWave()
+	{
+		Analytics.CustomEvent("bossWaveReached", new Dictionary<string, object>
+		{
+			{"BossWaveReached", "Reached Boss: " + wave.ToString()}
+		});
+	}
+	
+	void ReportDifficulty()
+	{
+		Analytics.CustomEvent("difficultyPlaying", new Dictionary<string, object>
+		{
+			{"DiffcultyPlayed", "Difficulty: " + difficulty.ToString()}
 		});
 	}
 }

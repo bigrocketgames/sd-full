@@ -39,7 +39,18 @@ public class BossController : MonoBehaviour {
 		difficulty = PlayerPrefsManager.GetDifficulty();
 		DetermineHealth();
 		
-		repeatFireRate = 2.5f - (0.01f * wave);
+		string gameMode = PlayerPrefsManager.GetGameMode();
+		{
+			if(gameMode == "Boss")
+			{
+				repeatFireRate = 2.0f - (0.1f * wave);
+			}
+			else
+			{
+				repeatFireRate = 2.0f - (0.01f * wave);
+			}
+		}
+		
 		InvokeRepeating("NextDestination",0f,1.0f);
 		InvokeRepeating("EnemyFire",0f,repeatFireRate);
 		
