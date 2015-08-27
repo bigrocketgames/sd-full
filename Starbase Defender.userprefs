@@ -1,30 +1,18 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\DiffMenu.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\StarbaseShieldController.cs">
     <Files>
-      <File FileName="Assets\Scripts\DiffMenu.cs" Line="153" Column="4" />
-      <File FileName="Assets\Scripts\QuitButton.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\AdInitScript.cs" Line="7" Column="60" />
+      <File FileName="Assets\Scripts\DiffMenu.cs" Line="143" Column="29" />
+      <File FileName="Assets\Scripts\GameScene.cs" Line="33" Column="3" />
       <File FileName="Assets\Scripts\ButtonChoice.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\GameScene.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\EnemyController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\PlayerLaser.cs" Line="57" Column="5" />
-      <File FileName="Assets\Scripts\BossController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\PlayerController.cs" Line="69" Column="57" />
-      <File FileName="Assets\Scripts\AdInitScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\ResultsMenu.cs" Line="30" Column="18" />
+      <File FileName="Assets\Plugins\Android\AndroidManifest.xml" Line="21" Column="139" />
+      <File FileName="Assets\Plugins\Android\Heyzap\AndroidManifest.xml" Line="6" Column="62" />
+      <File FileName="Assets\Scripts\PlayerPrefsManager.cs" Line="124" Column="3" />
+      <File FileName="f:\Unity\Starbase Defender\Assets\Scripts\ResultsMenu.cs" Line="87" Column="42" />
+      <File FileName="Assets\Scripts\ShipShieldController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\StarbaseShieldController.cs" Line="80" Column="98" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State expanded="True">
-          <Node name="Assembly-CSharp" expanded="True">
-            <Node name="Scripts" expanded="True">
-              <Node name="DiffMenu.cs" selected="True" />
-            </Node>
-          </Node>
-          <Node name="Assembly-CSharp-firstpass" expanded="True" />
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

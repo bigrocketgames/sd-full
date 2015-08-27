@@ -7,7 +7,9 @@ public class PlayerPrefsManager : MonoBehaviour {
 	const string SFX_VOLUME_KEY = "sfx_volume";
 	const string DIFFICULTY_KEY = "difficulty";
 	const string LEVEL_KEY = "level_unlocked_";
-	const string HIGHSCORE_KEY = "highscore";
+	const string WAVE_HIGHSCORE_KEY = "wavehighscore";
+	const string BOSS_HIGHSCORE_KEY = "bosshighscore";
+	const string ENDLESS_HIGHSCORE_KEY = "endlesshighscore";
 	const string CURRENT_SCORE_KEY = "current_score";
 	const string PLAYER_SHIP_KEY = "ship_choice";
 	const string MODE_CHOICE_KEY = "mode_choice";
@@ -108,14 +110,34 @@ public class PlayerPrefsManager : MonoBehaviour {
 		return PlayerPrefs.GetInt(CURRENT_SCORE_KEY);
 	}
 	
-	public static int GetHighScore()
+	public static int GetWaveHighScore()
 	{
-		return PlayerPrefs.GetInt(HIGHSCORE_KEY);	
+		return PlayerPrefs.GetInt(WAVE_HIGHSCORE_KEY);	
 	}
 	
-	public static void SetHighScore(int score)
+	public static void SetWaveHighScore(int score)
 	{
-		PlayerPrefs.SetInt(HIGHSCORE_KEY, score);
+		PlayerPrefs.SetInt(WAVE_HIGHSCORE_KEY, score);
+	}
+	
+	public static int GetBossHighScore()
+	{
+		return PlayerPrefs.GetInt(BOSS_HIGHSCORE_KEY);	
+	}
+	
+	public static void SetBossHighScore(int score)
+	{
+		PlayerPrefs.SetInt(BOSS_HIGHSCORE_KEY, score);
+	}
+	
+	public static int GetEndlessHighScore()
+	{
+		return PlayerPrefs.GetInt(ENDLESS_HIGHSCORE_KEY);	
+	}
+	
+	public static void SetEndlessHighScore(int score)
+	{
+		PlayerPrefs.SetInt(ENDLESS_HIGHSCORE_KEY, score);
 	}
 	
 	public static void SetPlayerShip(string shipName)

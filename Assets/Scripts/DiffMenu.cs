@@ -91,6 +91,7 @@ public class DiffMenu : MonoBehaviour {
 		rewardYesNo = "Yes";
 		if (HZIncentivizedAd.isAvailable("default"))
 		{
+			HZBannerAd.hide();
 			HZIncentivizedAd.show("default");
 		}
 		else
@@ -138,6 +139,8 @@ public class DiffMenu : MonoBehaviour {
 		adQuestionText.text = "Your reward is the upgrade to: " + weaponUpgradeText;
 		ok1Button.SetActive(true);
 		okButton.SetActive(false);
+		yesButton.SetActive(false);
+		noButton.SetActive(false);
 	}
 	
 	void GetReward()

@@ -7,6 +7,7 @@ public class ResultsMenu : MonoBehaviour {
 	public Text resultText;
 	public Text currentScoreText;
 	public Text highScoreText;
+	public Text highScoreNumber;
 	
 	public GameObject newHighScore;
 	public Text newHighScoreText;
@@ -16,11 +17,13 @@ public class ResultsMenu : MonoBehaviour {
 
 	private int highScore;
 	private int currentScore;
+	private string mode;
 	
 	// Use this for initialization
 	void Start () {
 		HZBannerAd.show(HZBannerAd.POSITION_BOTTOM);
 		
+		mode = PlayerPrefsManager.GetGameMode();
 		newHighScore.SetActive(false);
 		scoreManager = FindObjectOfType<ScoreManager>();
 		sfxManager = FindObjectOfType<SFXManager>();
@@ -41,12 +44,36 @@ public class ResultsMenu : MonoBehaviour {
 	
 	void CheckHighScore()
 	{
-		highScore = PlayerPrefsManager.GetHighScore();
+		if(mode == "Wave")
+		{
+			highScore = PlayerPrefsManager.GetWaveHighScore();
+		}
+		else if(mode == "Boss")
+		{
+			highScore = PlayerPrefsManager.GetBossHighScore();
+		}
+		else if(mode == "Endless")
+		{
+			highScore = PlayerPrefsManager.GetEndlessHighScore();
+		}
+		
 		currentScore = PlayerPrefsManager.GetCurrentScore();
 		
 		if(currentScore > highScore)
 		{
-			PlayerPrefsManager.SetHighScore(currentScore);
+			if(mode == "Wave")
+			{
+				PlayerPrefsManager.SetWaveHighScore(currentScore);
+			}
+			else if(mode == "Boss")
+			{
+				PlayerPrefsManager.SetBossHighScore(currentScore);
+			}
+			else if(mode == "Endless")
+			{
+				PlayerPrefsManager.SetEndlessHighScore(currentScore);
+			}
+			
 			highScore = currentScore;
 			NewHighScore();
 		}
@@ -54,8 +81,21 @@ public class ResultsMenu : MonoBehaviour {
 	
 	void SetScoreText()
 	{
-		currentScoreText.text = "ScorE: " + currentScore.ToString();
-		highScoreText.text = "HIGH ScorE: " + highScore.ToString();
+		currentScoreText.text = "ScorE " + currentScore.ToString();
+		if(mode == "Wave")
+		{
+			highScoreText.text = " WAvE HIGH ScorE";
+		}
+		else if(mode == "Boss")
+		{
+			highScoreText.text = "BOSS HIGH ScorE";
+		}
+		else if(mode == "Endless")
+		{
+			highScoreText.text = "ENdLESS HIGH ScorE";
+		}
+		highScoreNumber.text = highScore.ToString();
+		
 	}
 	
 	void NewHighScore()

@@ -30,6 +30,7 @@ public class GameScene : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
+		HZIncentivizedAd.fetch("default");
 		HZBannerAd.hide();
 		
 		pauseMenu.SetActive(false);
